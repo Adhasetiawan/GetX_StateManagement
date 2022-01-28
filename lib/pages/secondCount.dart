@@ -15,7 +15,7 @@ class secondCount extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Center(
-              child: Text('Keluaran nilai ke- ${control.hitung}'),
+              child: Text('Keluaran nilai ke- 1'),
             )
           ],
         ),
