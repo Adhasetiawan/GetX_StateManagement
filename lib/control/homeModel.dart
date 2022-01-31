@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:second_app/api/api.dart';
 
 class homeModel {
@@ -11,6 +13,8 @@ class homeModel {
     };
 
     var r = await apiService().postMethod("api/users", dataFeedback);
-    return r.data;
+    print(r);
+
+    return r;
   }
 }

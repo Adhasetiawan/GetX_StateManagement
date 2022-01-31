@@ -7,14 +7,24 @@ class homePage extends GetView<homeController>{
   @override
   Widget build(BuildContext context) => Scaffold(
     floatingActionButton: FloatingActionButton(
-      onPressed: (){},
+      onPressed: () => controller.postData(),
       child: Icon(CupertinoIcons.add),
     ),
     body: SafeArea(
-      child: Stack(
+      child: Column(
         children: <Widget>[
           Center(
-            child: Obx(() => Text('Masukan data ke- 1', style: TextStyle(fontSize: 20),)),
+            child: TextField(
+              controller: controller.edtName,
+            ),
+          ),
+          Center(
+            child: TextField(
+              controller: controller.edtJob,
+            ),
+          ),
+          Center(
+            child: Obx(() => Text('nama : ${controller.nama} kerja : ${controller.job}', style: TextStyle(fontSize: 20),)),
           )
         ],
       ),
