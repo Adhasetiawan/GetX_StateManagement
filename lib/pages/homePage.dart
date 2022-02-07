@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:second_app/control/homeControl.dart';
+import 'package:second_app/control/secondHomeControl.dart';
+import 'package:second_app/pages/secondCount.dart';
 
 class homePage extends GetView<homeController>{
   @override
@@ -25,7 +27,8 @@ class homePage extends GetView<homeController>{
           ),
           Center(
             child: Obx(() => Text('nama : ${controller.nama} kerja : ${controller.job}', style: TextStyle(fontSize: 20),)),
-          )
+          ),
+          ElevatedButton(onPressed: ()=> Get.to(secondCount()), child: Text('Intent'))
         ],
       ),
     ),
