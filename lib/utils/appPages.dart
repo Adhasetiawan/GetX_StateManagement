@@ -12,7 +12,7 @@ class appPages{
       binding:homeBind()
     ),
     GetPage(
-        name : Routes.INITIAL,
+        name : Routes.SEC_INITIAL,
         page: () => secondCount(),
         binding:homeBind()
     ),
