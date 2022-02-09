@@ -10,28 +10,58 @@ class homePage extends GetView<homeController>{
   @override
   Widget build(BuildContext context) => Scaffold(
     floatingActionButton: FloatingActionButton(
-      onPressed: () => controller.postData(),
-      child: Icon(CupertinoIcons.add),
+      onPressed: () => Get.toNamed(Routes.SEC_INITIAL),
+      child: Icon(CupertinoIcons.arrow_right),
     ),
-    body: SafeArea(
-      child: Column(
-        children: <Widget>[
-          Center(
-            child: TextField(
-              controller: controller.edtName,
-            ),
+    body: Stack(
+      children: <Widget>[
+        Container(
+          color: Color(0xfff5f5f5),
+        ),
+        SafeArea(
+          child: Column(
+            children: <Widget>[
+              Center(
+                child: Card(
+                  margin: EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  elevation: 2,
+                  child: TextField(
+                    controller: controller.edtName,
+                    decoration: InputDecoration(
+                      border: InputBorder.none
+                    ),
+                  ),
+                ),
+              ),
+              Center(
+                child: Card(
+                  margin: EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  elevation: 2,
+                  child: TextField(
+                    controller: controller.edtJob,
+                    decoration: InputDecoration(
+                      border: InputBorder.none
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                child: Center(
+                  child: Obx(() => Text((controller.nama == '' && controller.job == '') ? 'Data kosong' : 'Nama saya ${controller.nama} dan saya adalah seorang ${controller.nama}', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,)),
+                ),
+              ),
+              ElevatedButton(onPressed: ()=> controller.postData(), child: Text('Post Data'),)
+            ],
           ),
-          Center(
-            child: TextField(
-              controller: controller.edtJob,
-            ),
-          ),
-          Center(
-            child: Obx(() => Text('nama : ${controller.nama} kerja : ${controller.job}', style: TextStyle(fontSize: 20),)),
-          ),
-          ElevatedButton(onPressed: ()=> Get.toNamed(Routes.SEC_INITIAL), child: Text('intent'),)
-        ],
-      ),
+        )
+      ],
     ),
   );
 }
