@@ -54,7 +54,7 @@ class homePage extends GetView<homeController>{
               Container(
                 margin: EdgeInsets.all(10),
                 child: Center(
-                  child: Obx(() => Text((controller.nama == '' && controller.job == '') ? 'Data kosong' : 'Nama saya ${controller.nama} dan saya adalah seorang ${controller.nama}', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,)),
+                  child: Obx(() => Text((controller.nama == '' && controller.job == '') ? 'Data kosong' : 'Nama saya ${controller.nama} dan saya adalah seorang ${controller.job}', style: TextStyle(fontSize: 18), textAlign: TextAlign.center,)),
                 ),
               ),
               ElevatedButton(onPressed: ()=> controller.postData(), child: Text('Post Data'),)

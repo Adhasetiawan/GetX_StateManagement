@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:second_app/binding/homeBind.dart';
 import 'package:second_app/pages/homePage.dart';
 import 'package:second_app/pages/secondCount.dart';
+import 'package:second_app/pages/thirdCount.dart';
 import 'package:second_app/utils/appRoutes.dart';
 
 class appPages{
@@ -14,6 +15,11 @@ class appPages{
     GetPage(
         name : Routes.SEC_INITIAL,
         page: () => secondCount(),
+        binding:homeBind()
+    ),
+    GetPage(
+        name : Routes.TRD_INITIAL,
+        page: () => thirdCount(),
         binding:homeBind()
     ),
   ];

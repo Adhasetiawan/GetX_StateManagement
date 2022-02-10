@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:second_app/control/secondHomeControl.dart';
@@ -5,6 +6,10 @@ import 'package:second_app/control/secondHomeControl.dart';
 class secondCount extends GetView<secondHomeControl> {
   @override
   Widget build(BuildContext context) => Scaffold(
+    floatingActionButton: FloatingActionButton(
+      onPressed: ()=> Get.toNamed('/lastHome'),
+      child: Icon(CupertinoIcons.arrow_right),
+    ),
         body: SafeArea(
           child: Stack(
             children: <Widget>[
