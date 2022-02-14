@@ -14,6 +14,7 @@ class thirdCount extends GetView<thirdHomeControl> {
                 color: Color(0xfff5f5f5),
               ),
               ListView.builder(
+                controller: controller.loadController,
                   itemCount: controller.allData.length,
                   itemBuilder: (context, index) {
                     return ListTile(
@@ -22,8 +23,14 @@ class thirdCount extends GetView<thirdHomeControl> {
                         style: TextStyle(fontSize: 50),
                       ),
                     );
-                  })
-            ],
+                  }),
+              (controller.loadingMore.isTrue) ? Align(
+                alignment: Alignment.bottomCenter,
+                child: Positioned(
+                  child: CircularProgressIndicator(),
+                ),
+              ) : Material()
+                ],
           ),
         )),
       );
