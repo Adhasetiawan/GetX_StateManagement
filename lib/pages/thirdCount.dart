@@ -5,9 +5,9 @@ import 'package:second_app/control/thirdHomeControl.dart';
 
 class thirdCount extends GetView<thirdHomeControl> {
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(
-        body: Obx(()=> SafeArea(
+  Widget build(BuildContext context) => Scaffold(
+        body: Obx(()=> RefreshIndicator(
+          onRefresh: ()async => controller.onRefresh(),
           child: Stack(
             children: <Widget>[
               Container(
@@ -15,12 +15,14 @@ class thirdCount extends GetView<thirdHomeControl> {
               ),
               ListView.builder(
                   itemCount: controller.allData.length,
-                  itemBuilder: (context, index){
+                  itemBuilder: (context, index) {
                     return ListTile(
-                      title: Text('ID : ${controller.allData[index].id} Nama : ${controller.allData[index].name}'),
+                      title: Text(
+                        'ID : ${controller.allData[index].id}\nNama : ${controller.allData[index].firstName}',
+                        style: TextStyle(fontSize: 50),
+                      ),
                     );
-                  }
-              )
+                  })
             ],
           ),
         )),
