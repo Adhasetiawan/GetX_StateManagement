@@ -10,7 +10,7 @@ class homePage extends GetView<homeController>{
   @override
   Widget build(BuildContext context) => Scaffold(
     floatingActionButton: FloatingActionButton(
-      onPressed: () => Get.toNamed(Routes.SEC_INITIAL),
+      onPressed: () => Get.off(secondCount()),
       child: Icon(CupertinoIcons.arrow_right),
     ),
     body: Stack(

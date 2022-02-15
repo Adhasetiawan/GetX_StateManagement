@@ -14,13 +14,13 @@ class thirdCount extends GetView<thirdHomeControl> {
                 color: Color(0xfff5f5f5),
               ),
               ListView.builder(
-                controller: controller.loadController,
+                  controller: controller.loadController,
                   itemCount: controller.allData.length,
                   itemBuilder: (context, index) {
                     return ListTile(
                       title: Text(
                         'ID : ${controller.allData[index].id}\nNama : ${controller.allData[index].firstName}',
-                        style: TextStyle(fontSize: 50),
+                        style: TextStyle(fontSize: 40),
                       ),
                     );
                   }),
